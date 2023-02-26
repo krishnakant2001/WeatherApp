@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Form from "./Components/input/Form";
+import Display from "./Components/ApiCall/Display";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [city, setCity] = useState("");
+
+  const cityNameHandler = (name) => {
+    setCity(name);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="mainHeading">Weather App</div>
+      <section id="inputArea">
+        <Form onCityName={cityNameHandler} />
+      </section>
+      <section>
+        {city ? (
+          <div className="cityName">
+            <Display cityName={city} />
+          </div>
+        ) : (
+          <div className="centerised">
+            <div className="blurness">
+              <Display cityName="london" />
+            </div>
+            <div className="blurness">
+              <Display cityName="new york" />
+            </div>
+            <div className="blurness">
+              <Display cityName="mumbai" />
+            </div>
+          </div>
+        )}
+      </section>
     </div>
   );
-}
+};
 
 export default App;

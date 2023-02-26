@@ -1,0 +1,39 @@
+.textArea {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  /* border: 1px solid red; */
+  width: 90%;
+  margin: auto;
+  padding: 7px;
+  z-index: 100;
+  border-radius: 5px;
+  /* background: whitesmoke; */
+  background: transparent;
+}
+.textArea label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.textArea input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background: transparent;
+}
+
+.textArea button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  border-bottom: 1px solid black;
+}
+
+.textArea button:hover {
+  color: rgb(65, 103, 253);
+  cursor: pointer;
+}
